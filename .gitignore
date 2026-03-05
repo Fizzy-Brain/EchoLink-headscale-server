@@ -6,6 +6,20 @@ logs/
 
 *.prof
 
+# docs
+Echolink-chat.md
+Headscale-Repo-Analysis.md
+
+# envs
+.env
+.env.*
+
+# tls
+*.pem
+*.crt
+*.csr
+*.key.pem
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -54,3 +68,13 @@ __debug_bin
 node_modules/
 package-lock.json
 package.json
+
+# files and folders not needed for the Echolink
+integration/
+cmd/hi/
+nix/
+cmd/mapresponses/
+.github/workflows/
+.goreleaser.yml
+.golangci.yaml
+.pre.commit.config.yaml
