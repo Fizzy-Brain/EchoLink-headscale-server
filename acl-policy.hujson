@@ -1,0 +1,37 @@
+{
+  // EchoLink ACL Policy
+  //
+  // Security model:
+  //   - A user can only reach their OWN devices (strict per-user isolation)
+  //   - Only SSH (port 22) is allowed between devices
+  //   - ICMP (ping) is allowed for connectivity checks
+  //   - All other traffic is denied by default (implicit deny)
+  //
+  // This means:
+  //   - User's phone can SSH into their laptop ✓
+  //   - User's phone CANNOT reach others laptop ✓
+  //   - No other ports (HTTP, RDP, etc.) are reachable between devices ✓
+
+  "acls": [
+    // Allow SSH between a user's own devices only.
+    // autogroup:member = all personal (non-tagged) user devices.
+    // autogroup:self   = devices owned by the same user as the source.
+    //                    Can only be used in dst, not src.
+    
+    {
+      "action": "accept",
+      "src": ["autogroup:member"],
+      "dst": ["autogroup:self:22,2222"],
+    },
+
+    // Allow ICMP (ping) between a user's own devices.
+    // Useful for checking if a device is reachable before SSH.
+
+    {
+      "action": "accept",
+      "proto": "icmp",
+      "src": ["autogroup:member"],
+      "dst": ["autogroup:self:*"],
+    },
+  ],
+}

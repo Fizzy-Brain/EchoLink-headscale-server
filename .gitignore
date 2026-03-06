@@ -43,6 +43,7 @@ config*.yaml
 !config-example.yaml
 derp.yaml
 *.hujson
+!acl-policy.hujson
 *.key
 /db.sqlite
 *.sqlite3
@@ -69,13 +70,29 @@ node_modules/
 package-lock.json
 package.json
 
-# files and folders not needed for the Echolink
+# files and folders not needed for EchoLink
 integration/
 cmd/hi/
 nix/
 cmd/mapresponses/
-.github/workflows/
+.github/
 .goreleaser.yml
 .golangci.yaml
 .pre-commit-config.yaml
 google-oauth-client-secret.json
+Dockerfile.integration
+Dockerfile.integration-ci
+Dockerfile.tailscale-HEAD
+Dockerfile.derper
+CHANGELOG.md
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+mkdocs.yml
+buf.gen.yaml
+derp-example.yaml
+Makefile
+flake.nix
+flake.lock
+swagger.go
+tools/
+.claude/
