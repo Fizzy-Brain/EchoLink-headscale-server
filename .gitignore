@@ -77,4 +77,5 @@ cmd/mapresponses/
 .github/workflows/
 .goreleaser.yml
 .golangci.yaml
-.pre.commit.config.yaml
+.pre-commit-config.yaml
+google-oauth-client-secret.json
