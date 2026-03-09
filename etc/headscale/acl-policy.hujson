@@ -21,7 +21,7 @@
     {
       "action": "accept",
       "src": ["autogroup:member"],
-      "dst": ["autogroup:self:22,2222"],
+      "dst": ["autogroup:self:22,2222,44444"],
     },
 
     // Allow ICMP (ping) between a user's own devices.
